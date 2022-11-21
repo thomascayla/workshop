@@ -1,0 +1,180 @@
+{
+  "type": "chart",
+  "params": {
+    "datasetSmartName": "transactions_joined_prepared",
+    "engineType": "LINO",
+    "refreshableSelection": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "RANDOM_FIXED_NB",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 2
+    },
+    "def": {
+      "type": "scatter",
+      "variant": "normal",
+      "name": "card_fico_score vs purchase_amount",
+      "userEditedName": false,
+      "genericDimension0": [],
+      "genericDimension1": [],
+      "facetDimension": [],
+      "animationDimension": [],
+      "genericMeasures": [],
+      "xDimension": [],
+      "yDimension": [],
+      "uaXDimension": [
+        {
+          "column": "card_fico_score",
+          "type": "NUMERICAL",
+          "treatAsAlphanum": false,
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaYDimension": [
+        {
+          "column": "purchase_amount",
+          "type": "NUMERICAL",
+          "treatAsAlphanum": false,
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaSize": [],
+      "uaShape": [],
+      "uaColor": [
+        {
+          "column": "authorized_flag",
+          "type": "NUMERICAL",
+          "treatAsAlphanum": false,
+          "isA": "ua",
+          "adminLevel": 0
+        }
+      ],
+      "uaTooltip": [],
+      "groupDimension": [],
+      "xMeasure": [],
+      "yMeasure": [],
+      "colorMeasure": [],
+      "sizeMeasure": [],
+      "geometry": [],
+      "tooltipMeasures": [],
+      "boxplotBreakdownDim": [],
+      "boxplotValue": [],
+      "filters": [
+        {
+          "filterType": "NUMERICAL_FACET",
+          "column": "purchase_amount",
+          "columnType": "NUMERICAL",
+          "maxValue": 1000.0,
+          "isA": "filter",
+          "excludedValues": {},
+          "explicitExclude": false
+        }
+      ],
+      "axis1LogScale": false,
+      "axis2LogScale": false,
+      "includeZero": true,
+      "smoothing": true,
+      "showLegend": true,
+      "showXAxis": false,
+      "showInChartValues": false,
+      "showInChartLabels": true,
+      "strokeWidth": 1,
+      "fillOpacity": 0.6,
+      "showXAxisLabel": true,
+      "showYAxisLabel": true,
+      "hexbinRadius": 20,
+      "hexbinNumber": 20,
+      "hexbinRadiusMode": "NUM_HEXAGONS",
+      "chartHeight": 200,
+      "singleXAxis": true,
+      "multiTooltips": false,
+      "animationFrameDuration": 3000,
+      "animationRepeat": true,
+      "colorOptions": {
+        "singleColor": "#2678B1",
+        "transparency": 0.75,
+        "colorPalette": "ryg1",
+        "ccScaleMode": "NORMAL",
+        "customPalette": {
+          "id": "__dku_custom__",
+          "name": "Custom Palette",
+          "colors": [],
+          "values": [],
+          "fixedValues": false
+        },
+        "paletteType": "CONTINUOUS",
+        "quantizationMode": "NONE",
+        "numQuantizeSteps": 5,
+        "paletteMiddleValue": 0.0
+      },
+      "bubblesOptions": {
+        "defaultRadius": 5.0,
+        "singleShape": "FILLED_CIRCLE"
+      },
+      "xAxisMode": "NORMAL",
+      "yAxisMode": "NORMAL",
+      "pieOptions": {
+        "donutHoleSize": 54.0
+      },
+      "scatterOptions": {
+        "equalScales": false,
+        "identityLine": false
+      },
+      "mapOptions": {
+        "tilesLayer": "cartodb-positron",
+        "lockSquareGrid": false
+      },
+      "mapGridOptions": {
+        "gridLonDeg": 0.5,
+        "gridLatDeg": 0.5
+      },
+      "thumbnailData": "data:image/png;base64,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",
+      "disableSafetyLimits": false,
+      "useLiveProcessingIfAvailable": true,
+      "legendPlacement": "OUTER_RIGHT"
+    },
+    "maxDataBytes": 157286400
+  },
+  "owner": "dataiku-admin",
+  "listed": false,
+  "name": "card_fico_score vs purchase_amount on transactions_joined_prepared",
+  "dashboardCreationId": "cs0QBZN",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "dataiku-admin"
+    },
+    "lastModifiedOn": 1623794339688
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "dataiku-admin"
+    },
+    "lastModifiedOn": 1623794339688
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

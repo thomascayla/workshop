@@ -1,0 +1,12 @@
+{
+  "tags": {
+    "duplicated": {
+      "color": "#3A85AD"
+    },
+    "origin:sql_import": {},
+    "imported": {
+      "color": "#263238"
+    },
+    "postgres-local": {}
+  }
+}

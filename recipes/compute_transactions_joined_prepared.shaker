@@ -1,0 +1,238 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "maxStoredBytes": 104857600,
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL",
+      "timeout": -1
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "name": "Date Formatting",
+      "metaType": "GROUP",
+      "disabled": false,
+      "comment": "Parse dates, compute days active, extract date components from purchase date, and create purchase weekend",
+      "steps": [
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "DateParser",
+          "params": {
+            "outCol": "card_first_active_month_parsed",
+            "formats": [
+              "yyyy-MM"
+            ],
+            "columns": [
+              "card_first_active_month"
+            ],
+            "timezone_id": "UTC",
+            "appliesTo": "SINGLE_COLUMN",
+            "lang": "auto"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "DateParser",
+          "params": {
+            "outCol": "purchase_date_parsed",
+            "formats": [
+              "yyyy-MM-dd"
+            ],
+            "columns": [
+              "purchase_date"
+            ],
+            "timezone_id": "UTC",
+            "appliesTo": "SINGLE_COLUMN",
+            "lang": "auto"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "DateComponentsExtractor",
+          "params": {
+            "outMonthColumn": "purchase_month",
+            "outHourColumn": "purchase_hour",
+            "outYearColumn": "purchase_year",
+            "column": "purchase_date_parsed",
+            "outDayOfWeekColumn": "purchase_dow",
+            "timezone_id": "UTC",
+            "outDayColumn": "purchase_day"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "CreateColumnWithGREL",
+          "params": {
+            "expression": "if(purchase_dow\u003e5,1,0)",
+            "column": "purchase_weekend"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "DateDifference",
+          "params": {
+            "output": "days_active",
+            "input2": "purchase_date_parsed",
+            "outputUnit": "DAYS",
+            "input1": "card_first_active_month_parsed",
+            "compareTo": "COLUMN",
+            "reverse": false
+          },
+          "alwaysShowComment": false
+        }
+      ],
+      "alwaysShowComment": true
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "GeoPointCreator",
+      "params": {
+        "out_column": "merchant_location",
+        "lat_column": "merchant_latitude",
+        "lon_column": "merchant_longitude"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "GeoPointCreator",
+      "params": {
+        "out_column": "card_location",
+        "lat_column": "card_latitude",
+        "lon_column": "card_longitude"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CityLevelReverseGeocoder",
+      "params": {
+        "l4OutCol": "merchant_state",
+        "inputCol": "merchant_location"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CityLevelReverseGeocoder",
+      "params": {
+        "l4OutCol": "card_state",
+        "inputCol": "card_location"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "GeoDistanceProcessor",
+      "params": {
+        "output": "merchant_cardholder_distance",
+        "input2": "merchant_location",
+        "outputUnit": "MILES",
+        "input1": "card_location",
+        "compareTo": "COLUMN"
+      },
+      "alwaysShowComment": false
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "merchant_latitude": 143,
+    "purchase_date_parsed_day": 195,
+    "purchase_day": 105,
+    "card_fico_score": 128,
+    "purchase_month": 120,
+    "merchant_id": 127,
+    "card_longitude": 120,
+    "item_category": 113,
+    "merchant_state_enName": 173,
+    "purchase_date_parsed": 190,
+    "card_state": 120,
+    "card_state_enName": 169,
+    "signature_provided": 150,
+    "card_age": 100,
+    "purchase_dow": 105,
+    "merchant_cardholder_distance": 225,
+    "card_first_active_month_parsed": 260,
+    "transaction_id": 120,
+    "purchase_year": 113,
+    "purchase_weekend": 135,
+    "card_first_active_month": 188,
+    "days_active": 100,
+    "card_latitude": 113,
+    "merchant_location": 169,
+    "merchant_category_id": 165,
+    "card_id": 120,
+    "merchant_subsector_description": 240,
+    "merchant_longitude": 150,
+    "purchase_date_parsed_year": 203,
+    "purchase_hour": 113,
+    "card_location": 162,
+    "purchase_amount": 128,
+    "card_reward_program": 158,
+    "purchase_date_parsed_month": 210,
+    "merchant_state": 148,
+    "purchase_date": 148,
+    "authorized_flag": 128
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
+  }
+}
