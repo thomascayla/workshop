@@ -60,11 +60,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 4,
+    "versionNumber": 5,
     "lastModifiedBy": {
-      "login": "dataiku-admin"
+      "login": "admin"
     },
-    "lastModifiedOn": 1632296880464
+    "lastModifiedOn": 1669042699407
   },
   "creationTag": {
     "versionNumber": 0,
