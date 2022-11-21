@@ -1,10 +1,12 @@
 {
   "type": "Filesystem",
   "managed": false,
+  "featureGroup": false,
   "formatType": "csv",
   "checklists": {
     "checklists": []
   },
+  "checks": [],
   "customMeta": {
     "kv": {}
   },
@@ -58,11 +60,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
-      "login": "dataiku-admin"
+      "login": "admin"
     },
-    "lastModifiedOn": 1624336372218
+    "lastModifiedOn": 1669042653375
   },
   "creationTag": {
     "versionNumber": 0,
@@ -74,7 +76,7 @@
   "tags": [],
   "params": {
     "connection": "filesystem_root",
-    "path": "/data/shared/transactions_partitioned",
+    "path": "/Users/thomascayla/Documents/data/shared/transactions_partitioned",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
       "mode": "ALL",
@@ -85,42 +87,15 @@
   },
   "schema": {
     "columns": [
-      {
-        "name": "transaction_id",
-        "type": "string"
-      },
-      {
-        "name": "authorized_flag",
-        "type": "string"
-      },
-      {
-        "name": "purchase_date",
-        "type": "string"
-      },
-      {
-        "name": "card_id",
-        "type": "string"
-      },
-      {
-        "name": "merchant_id",
-        "type": "string"
-      },
-      {
-        "name": "merchant_category_id",
-        "type": "string"
-      },
-      {
-        "name": "item_category",
-        "type": "string"
-      },
-      {
-        "name": "purchase_amount",
-        "type": "string"
-      },
-      {
-        "name": "signature_provided",
-        "type": "string"
-      }
+      {"name":"transaction_id","type":"string"},
+      {"name":"authorized_flag","type":"string"},
+      {"name":"purchase_date","type":"string"},
+      {"name":"card_id","type":"string"},
+      {"name":"merchant_id","type":"string"},
+      {"name":"merchant_category_id","type":"string"},
+      {"name":"item_category","type":"string"},
+      {"name":"purchase_amount","type":"string"},
+      {"name":"signature_provided","type":"string"}
     ],
     "userModified": true
   },
