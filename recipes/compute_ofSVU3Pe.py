@@ -1,6 +1,6 @@
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # -*- coding: utf-8 -*-
-%matplotlib inline
+#%matplotlib inline
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
