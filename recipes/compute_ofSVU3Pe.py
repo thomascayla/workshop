@@ -50,7 +50,7 @@ ax2.plot(labels, validation_ratio)
 ax2.set_ylabel('Percentage')
 
 #plt.title('')
-plt.show()
+#plt.show()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Save plot to folder
