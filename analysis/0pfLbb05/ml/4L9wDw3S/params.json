@@ -1209,7 +1209,7 @@
           "scaling": "LINEAR"
         }
       },
-      "enabled": true
+      "enabled": false
     },
     "extra_trees": {
       "n_estimators": {
@@ -1850,7 +1850,7 @@
         }
       },
       "n_jobs": 2,
-      "enabled": true
+      "enabled": false
     },
     "neural_network": {
       "layer_sizes": {
@@ -2899,7 +2899,13 @@
       "epsilon": 1.0E-6,
       "optimizer": "BFGS"
     },
-    "custom_python": [],
+    "custom_python": [
+      {
+        "enabled": true,
+        "code": "# This sample code uses a standard scikit-learn algorithm, the Adaboost classifier.\n# Your code must create a ‘clf’ variable. This clf must be a scikit-learn compatible\n# classifier, ie, it should:\n#  1. have at least fit(X,y) and predict(X) methods\n#  2. inherit sklearn.base.BaseEstimator\n#  3. handle the attributes in the __init__ function\n#  4. have a classes_ attribute\n#  5. have a predict_proba method (optional)\n#     See: https://doc.dataiku.com/dss/latest/machine-learning/custom-models.html\nimport numpy as np\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom sklearn.model_selection import cross_val_score\nfrom sklearn.ensemble import RandomForestClassifier\n\nrandom_search \u003d {\u0027criterion\u0027: [\u0027entropy\u0027, \u0027gini\u0027],\n               \u0027max_features\u0027: [\u0027sqrt\u0027],\n               \u0027min_samples_leaf\u0027: [5, 10]}\nclf \u003d RandomizedSearchCV(estimator \u003d RandomForestClassifier(), param_distributions \u003d random_search, n_iter \u003d 80,\n                               cv \u003d 4, verbose\u003d 5, random_state\u003d 101, n_jobs \u003d -1)",
+        "name": "Custom Python model"
+      }
+    ],
     "plugin_python": {
       "CustomPyPredAlgo_generalized-linear-models_generalized-linear-models_binary-classification": {
         "pluginId": "generalized-linear-models",
@@ -2908,7 +2914,7 @@
         "name": "Generalized Linear Model Classification",
         "params": {
           "penalty": [
-            0.0
+            0
           ],
           "family_name": "binomial",
           "binomial_link": "logit",
@@ -2919,9 +2925,9 @@
           "negative_binomial_link": "log",
           "tweedie_link": "log",
           "offset_mode": "BASIC",
-          "alpha": 1.0,
-          "power": 1.0,
-          "var_power": 1.0
+          "alpha": 1,
+          "power": 1,
+          "var_power": 1
         },
         "supportsSampleWeights": false,
         "acceptsSparseMatrix": false,
