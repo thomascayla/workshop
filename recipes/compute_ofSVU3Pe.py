@@ -40,9 +40,8 @@ width = 2/3 # the width of the bars
 fig, ax1 = plt.subplots(figsize=(12, 6))
 ax1.bar(labels, count_pred, width, label='count_pred', color=colors[0])
 ax1.bar(labels, sum_true, width, bottom=count_pred, label='sum_true', color=colors[1])
-color = 'b'
-ax1.set_ylabel('Number of predictions vs true labels', color=color)
-ax1.tick_params('y', colors=color)
+ax1.set_ylabel('Number of predictions vs true labels', color=colors[0])
+ax1.tick_params('y', colors=colors[0])
 ax1.legend(loc='upper left')
 
 # .patches is everything inside of the chart
