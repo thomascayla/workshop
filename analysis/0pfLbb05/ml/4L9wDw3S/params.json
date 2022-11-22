@@ -3712,7 +3712,7 @@
         "rules": []
       },
       "samplingMethod": "CLASS_REBALANCE_TARGET_NB_APPROX",
-      "maxRecords": 100000,
+      "maxRecords": 1000,
       "targetRatio": 0.02,
       "column": "authorized_flag",
       "withinFirstN": -1,
