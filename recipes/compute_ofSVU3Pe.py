@@ -1,6 +1,6 @@
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # -*- coding: utf-8 -*-
-%matplotlib inline
+#%matplotlib inline
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
@@ -70,7 +70,6 @@ for bar in ax1.patches:
       weight='bold',
       size=10
     )
-    
     
 ax2 = ax1.twinx()
 color = 'r'
