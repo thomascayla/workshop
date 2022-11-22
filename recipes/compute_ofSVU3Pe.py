@@ -1,6 +1,6 @@
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # -*- coding: utf-8 -*-
-#%matplotlib inline
+%matplotlib inline
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
@@ -51,19 +51,16 @@ for rect in ax1.patches:
     width = rect.get_width()
     x = rect.get_x()
     y = rect.get_y()
-    
+
     # The height of the bar is the data value and can be used as the label
-    label_text = f'{height:.0f}' #to format decimal values
-    
-    # ax.text(x, y, text)
+    label_text = f'{height:,.0f}' #to format decimal values
+
+    # ax1.text(x, y, text)
     label_x = x + width / 2
     label_y = y + height / 2
+    ax1.text(label_x, label_y, label_text, ha='center', va='center', fontsize=12, color='w', weight='bold')
 
-    # plot only when height is greater than specified value
-    if height > 0:
-        ax1.text(label_x, label_y, label_text, ha='center', va='center', fontsize=12, color='w', weight='bold')
-  
-    
+
 ax2 = ax1.twinx()
 color = 'r'
 ax2.plot(labels, validation_ratio, label='True ratio', color=color)
@@ -73,7 +70,7 @@ ax2.legend(loc='upper right')
 
 # Add ratio value to each bar.
 for i, ratio in enumerate(validation_ratio):
-    ax2.text(df_by_deciles.validation_ratio.index[i], ratio, '{:,.0%}'.format(ratio), ha='center', 
+    ax2.text(df_by_deciles.validation_ratio.index[i], ratio, '{:,.0%}'.format(ratio), ha='center',
              weight='bold', fontsize=12)
 
 plt.title('True vs predicted observations by decile of probas (on the validation set)', fontsize=16)
