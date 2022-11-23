@@ -61,7 +61,6 @@ for rect in ax1.patches:
     label_y = y + height / 2
     ax1.text(label_x, label_y, label_text, ha='center', va='center', fontsize=12, color='w', weight='bold')
 
-
 ax2 = ax1.twinx()
 color = 'r'
 ax2.plot(labels, validation_ratio, label='True ratio', color=color)
