@@ -18,7 +18,7 @@
     "main": {
       "items": [
         {
-          "ref": "transactions_known",
+          "ref": "transactions_train",
           "deps": []
         }
       ]
@@ -34,12 +34,13 @@
       ]
     }
   },
+  "labels": [],
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
-      "login": "dataiku-admin"
+      "login": "admin"
     },
-    "lastModifiedOn": 1623795881793
+    "lastModifiedOn": 1669211188343
   },
   "creationTag": {
     "versionNumber": 0,
