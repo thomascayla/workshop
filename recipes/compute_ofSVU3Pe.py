@@ -10,19 +10,19 @@ import seaborn as sns
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Read recipe inputs
-transactions_known_scored = dataiku.Dataset("transactions_known_scored").get_dataframe()
+transactions_evaluate = dataiku.Dataset("transactions_evaluate").get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 list_var = ['authorized_flag','proba_1']
-transactions_known_scored = transactions_known_scored[list_var]
-transactions_known_scored['decile'] = pd.cut(x=transactions_known_scored.proba_1,
+transactions_evaluate = transactions_evaluate[list_var]
+transactions_evaluate['decile'] = pd.cut(x=transactions_evaluate.proba_1,
                                              bins=10, precision=1, right=False)
-transactions_known_scored.decile = transactions_known_scored.decile.astype(str)
+transactions_evaluate.decile = transactions_evaluate.decile.astype(str)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 col_names = {'authorized_flag':'sum_true', 'proba_1':'count_pred'}
-df_by_deciles = transactions_known_scored.groupby(by='decile').agg({'authorized_flag':'sum',
-                                                                    'proba_1':'count'}).rename(columns=col_names)
+df_by_deciles = transactions_evaluate.groupby(by='decile').agg({'authorized_flag':'sum',
+                                                                'proba_1':'count'}).rename(columns=col_names)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 df_by_deciles['validation_ratio'] = df_by_deciles.sum_true/df_by_deciles.count_pred
