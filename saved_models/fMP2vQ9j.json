@@ -2861,14 +2861,14 @@
     "predictionDisplayCharts": [],
     "labels": []
   },
-  "lastTrainIndex": 1,
-  "lastTrainJobId": "",
+  "lastTrainIndex": 2,
+  "lastTrainJobId": "Build_Prediction__RANDOM_FOREST_CLASSIFICATION__on_transactions_known_2022-11-23T13-50-09.297",
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1669211520150
+    "lastModifiedOn": 1669211520296
   },
   "creationTag": {
     "versionNumber": 0,
