@@ -1,6 +1,6 @@
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # -*- coding: utf-8 -*-
-#%matplotlib inline
+%matplotlib inline
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
@@ -43,6 +43,7 @@ ax1.bar(labels, sum_true, width, bottom=count_pred, label='sum_true', color=colo
 ax1.set_ylabel('Number of predictions vs true labels', color=colors[0])
 ax1.tick_params('y', colors=colors[0])
 ax1.legend(loc='upper left')
+ax1.set_xlabel('Probability estimates')
 
 # .patches is everything inside of the chart
 for rect in ax1.patches:
@@ -73,14 +74,16 @@ for i, ratio in enumerate(validation_ratio):
     ax2.text(df_by_deciles.validation_ratio.index[i], ratio, '{:,.0%}'.format(ratio), ha='center',
              weight='bold', fontsize=12)
 
-plt.title('True vs predicted observations by decile of probas (on the validation set)', fontsize=16)
+
 fig.tight_layout()
+plt.title('True vs predicted observations by decile of probas (on the validation set)', fontsize=16)
 plt.show()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 ## Vérifier qu'on a les bons volumes (somme notamment) et commencer une review à présenter
 ## Dans quelle table le mettre
 ## Subject matter: all kind of binary classification (such as churn or engagement scoring)
+## Join legend
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Save plot to folder
