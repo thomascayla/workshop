@@ -35,7 +35,7 @@ labels = list(df_by_deciles.index)
 sum_true = list(df_by_deciles.sum_true)
 count_pred = list(df_by_deciles.count_pred)
 validation_ratio = list(df_by_deciles.validation_ratio)
-width = 2/3 # the width of the bars
+width = 3/4 # the width of the bars
 
 fig, ax1 = plt.subplots(figsize=(12, 6))
 ax1.bar(labels, count_pred, width, label='count_pred', color=colors[0])
