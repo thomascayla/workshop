@@ -73,8 +73,8 @@ for i, ratio in enumerate(validation_ratio):
     ax2.text(df_by_deciles.validation_ratio.index[i], ratio, '{:,.0%}'.format(ratio), ha='center',
              weight='bold', fontsize=12)
 
-fig.tight_layout()
 plt.title('True vs predicted observations by decile of probas (on the validation set)', fontsize=16)
+fig.tight_layout()
 plt.show()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
