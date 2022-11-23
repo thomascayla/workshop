@@ -166,7 +166,7 @@
     },
     "dkuProperties": []
   },
-  "name": "CC Fraud - VIZ",
+  "name": "Workshop GIT",
   "imgPattern": 1,
   "showInitials": false,
   "metrics": {
@@ -224,11 +224,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 28,
+    "versionNumber": 29,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1669222784727
+    "lastModifiedOn": 1669222798989
   },
   "creationTag": {
     "versionNumber": 0,
@@ -237,7 +237,7 @@
     },
     "lastModifiedOn": 1623793165728
   },
-  "shortDesc": "Predict credit card fraud\n",
+  "shortDesc": "Predict credit card fraud\n\nThe project *WORKSHOPGIT* was copied from *CCFRAUD_VIZ* by Administrator on Nov 23rd 2022",
   "tags": [
     "imported",
     "duplicated"
