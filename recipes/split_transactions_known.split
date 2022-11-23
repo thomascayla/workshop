@@ -12,7 +12,9 @@
   },
   "defaultOutputIndex": 1,
   "seed": 1337,
-  "randomColumns": [],
+  "randomColumns": [
+    "transaction_id"
+  ],
   "centileOrders": [],
   "rangeSetTime": false,
   "randomSplits": [
@@ -24,12 +26,12 @@
   "randomColumnsSplits": [
     {
       "outputIndex": 0,
-      "share": 50
+      "share": 80
     }
   ],
   "computedColumns": [],
   "writeComputedColumnsInOutput": false,
-  "mode": "RANDOM",
+  "mode": "RANDOM_COLUMNS",
   "centileTDigest": false,
   "valueSplits": [
     {
