@@ -31,7 +31,7 @@
   ],
   "computedColumns": [],
   "writeComputedColumnsInOutput": false,
-  "mode": "RANDOM_COLUMNS",
+  "mode": "RANDOM",
   "centileTDigest": false,
   "valueSplits": [
     {
