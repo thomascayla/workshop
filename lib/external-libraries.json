@@ -1,7 +1,15 @@
 {
-  "gitReferences": {},
+  "gitReferences": {
+    "dataPreprocessing": {
+      "remote": "git@github.com:thomascayla/pythonLib.git",
+      "checkout": "refs/heads/main",
+      "remotePath": "",
+      "isDirty": false
+    }
+  },
   "pythonPath": [
-    "python"
+    "python",
+    "dataPreprocessing"
   ],
   "rsrcPath": [
     "R"
