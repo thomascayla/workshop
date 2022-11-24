@@ -167,7 +167,7 @@
     },
     "dkuProperties": []
   },
-  "name": "Workshop GIT (prune-flow)",
+  "name": "Workshop GIT",
   "imgPattern": 1,
   "showInitials": false,
   "metrics": {
@@ -225,11 +225,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 36,
+    "versionNumber": 37,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1669295019941
+    "lastModifiedOn": 1669296035071
   },
   "creationTag": {
     "versionNumber": 0,
@@ -238,7 +238,7 @@
     },
     "lastModifiedOn": 1623793165728
   },
-  "shortDesc": "Predict credit card fraud\n\nThe project *WORKSHOPGIT* was copied from *CCFRAUD_VIZ* by Administrator on Nov 23rd 2022\nThe project *WORKSHOP_GIT_PRUNE_FLOW* was copied from *WORKSHOPGIT* by Administrator on Nov 24th 2022",
+  "shortDesc": "Predict credit card fraud\n\nThe project *WORKSHOPGIT* was copied from *CCFRAUD_VIZ* by Administrator on Nov 23rd 2022",
   "tags": [
     "imported",
     "duplicated"
