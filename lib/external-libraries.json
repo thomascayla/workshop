@@ -4,6 +4,10 @@
       "remote": "git@github.com:thomascayla/pythonLib.git",
       "checkout": "refs/heads/main",
       "remotePath": "",
+      "lastHash": "ff45f814a02698f8a2110f3216105ca36c8c25a7",
+      "conflictingFiles": [],
+      "resolvedFiles": [],
+      "faultyHash": "",
       "isDirty": false
     }
   },
