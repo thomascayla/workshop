@@ -8,6 +8,7 @@
       "color": "#263238"
     },
     "recipe-editor": {},
-    "postgres-local": {}
+    "postgres-local": {},
+    "deleted-recipe-editor": {}
   }
 }
