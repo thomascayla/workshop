@@ -36,9 +36,19 @@
       "exportInsightsData": false,
       "useManualPluginsInfo": false,
       "includedDatasetsData": [],
-      "includedSavedModels": [],
+      "includedSavedModels": [
+        {
+          "id": "fMP2vQ9j",
+          "name": "Prediction (RANDOM_FOREST_CLASSIFICATION) on transactions_known"
+        }
+      ],
       "includedModelEvaluationStores": [],
-      "includedManagedFolders": [],
+      "includedManagedFolders": [
+        {
+          "id": "ofSVU3Pe",
+          "name": "data_viz"
+        }
+      ],
       "includedCodeStudios": [],
       "includedLabelingTasks": [],
       "shareAllInputDatasets": false,
@@ -225,11 +235,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 33,
+    "versionNumber": 34,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1669294804041
+    "lastModifiedOn": 1669385916530
   },
   "creationTag": {
     "versionNumber": 0,
