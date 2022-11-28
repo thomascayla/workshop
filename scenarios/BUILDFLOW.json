@@ -1,22 +1,21 @@
 {
-  "projectKey": "CCFRAUDDEPLOYERSTARTER",
-  "id": "BUILDFLOW",
   "type": "step_based",
   "name": "Build Flow",
   "active": false,
+  "runAsUser": "admin",
   "creationTag": {
-    "versionNumber": 0,
-    "lastModifiedBy": {
-      "login": "dataiku-admin"
-    },
-    "lastModifiedOn": 1632296635884
-  },
-  "versionTag": {
     "versionNumber": 1,
     "lastModifiedBy": {
       "login": "dataiku-admin"
     },
     "lastModifiedOn": 1632296649528
+  },
+  "versionTag": {
+    "versionNumber": 2,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1669647234101
   },
   "checklists": {
     "checklists": []
