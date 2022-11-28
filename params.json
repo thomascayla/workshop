@@ -177,7 +177,7 @@
     },
     "dkuProperties": []
   },
-  "name": "Workshop GIT",
+  "name": "Workshop GIT (branch-thomas)",
   "imgPattern": 1,
   "showInitials": false,
   "metrics": {
@@ -235,11 +235,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 35,
+    "versionNumber": 36,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1669624753588
+    "lastModifiedOn": 1669624759109
   },
   "creationTag": {
     "versionNumber": 0,
@@ -248,7 +248,7 @@
     },
     "lastModifiedOn": 1623793165728
   },
-  "shortDesc": "Predict credit card fraud\n\nThe project *WORKSHOPGIT* was copied from *CCFRAUD_VIZ* by Administrator on Nov 23rd 2022",
+  "shortDesc": "Predict credit card fraud\n\nThe project *WORKSHOPGIT* was copied from *CCFRAUD_VIZ* by Administrator on Nov 23rd 2022\nThe project *WORKSHOP_GIT_BRANCH_THOMAS* was copied from *WORKSHOPGIT* by Administrator on Nov 28th 2022",
   "tags": [
     "imported",
     "duplicated"
